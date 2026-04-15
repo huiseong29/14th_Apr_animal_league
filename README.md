@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# 시험 테러 링크
 
-First, run the development server:
+링크 하나로 친구의 시험공부를 방해하는 바이럴 장난 웹앱
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<br />
+
+![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=111111)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+
+</div>
+
+---
+
+## 프로젝트 소개
+
+**시험 테러 링크**는 시험 기간에 친구에게 장난 링크를 보내는 콘셉트의 바이럴 웹앱입니다.
+
+사용자는 테러 링크를 생성해 친구에게 공유하고, 친구가 링크를 열면 처음에는 시험 자료처럼 보이는 미끼 화면이 나타납니다. 하지만 화면을 누르는 순간 중독성 있는 음악과 함께 화면이 카오스하게 변하며 장난이 시작됩니다.
+
+`Animal League`는 서비스명이 아니라 이 프로젝트가 참여하는 대회명입니다.
+
+## 핵심 아이디어
+
+> "시험 족보인 줄 알고 눌렀는데, 갑자기 공부가 망했다."
+
+시험 기간에 가장 혹하기 쉬운 키워드인 족보, 예상문제, 요약본 등을 미끼로 사용해 친구의 호기심을 유도합니다.  
+링크를 연 친구는 장난 화면을 마주하게 되고, 노래를 멈추기 위해 또 다른 친구에게 공유하게 됩니다.
+
+이 구조를 통해 장난이 자연스럽게 퍼지는 체인 바이럴 흐름을 만듭니다.
+
+## 서비스 플로우
+
+```text
+1. 사용자가 테러 링크를 생성한다
+   ↓
+2. 친구에게 링크를 공유한다
+   ↓
+3. 친구가 링크를 열면 "시험 족보 도착!" 미끼 화면이 뜬다
+   ↓
+4. 친구가 화면을 탭한다
+   ↓
+5. 중독곡이 재생되고 화면이 카오스로 변한다
+   ↓
+6. 닫기 버튼을 누르면 볼륨이 커지고 가짜 닫기 버튼이 늘어난다
+   ↓
+7. 유일한 탈출법처럼 보이는 공유 버튼이 등장한다
+   ↓
+8. 다른 친구에게 공유하면 장난이 다음 사람에게 이어진다
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 주요 기능
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| 기능           | 설명                                                                        |
+| -------------- | --------------------------------------------------------------------------- |
+| 테러 링크 생성 | 친구에게 보낼 장난 링크를 생성합니다.                                       |
+| 미끼 화면      | "시험 족보 도착!", "기출 문제 공유" 같은 문구로 사용자의 클릭을 유도합니다. |
+| 카오스 화면    | 탭 이후 배경, 텍스트, 버튼이 정신없이 변하는 화면을 제공합니다.             |
+| 중독곡 재생    | 사용자의 상호작용 이후 음악이 재생되며 장난이 시작됩니다.                   |
+| 가짜 닫기 버튼 | 닫기 버튼을 누를수록 버튼이 더 많아지는 장난 요소를 제공합니다.             |
+| 공유 유도      | 공유 버튼을 통해 다른 친구에게 장난 링크를 전달하도록 유도합니다.           |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 화면 구성 아이디어
 
-## Learn More
+| 화면      | 내용                                                         |
+| --------- | ------------------------------------------------------------ |
+| 메인 화면 | 테러 링크를 생성하는 화면                                    |
+| 미끼 화면 | 시험 자료가 도착한 것처럼 보이는 화면                        |
+| 테러 화면 | 음악, 흔들리는 UI, 랜덤 문구, 가짜 닫기 버튼이 등장하는 화면 |
+| 공유 화면 | 친구에게 공유해야 탈출할 수 있는 것처럼 연출하는 화면        |
 
-To learn more about Next.js, take a look at the following resources:
+## 바이럴 포인트
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 시험 기간에 반응하기 쉬운 문구를 사용합니다.
+- 링크 하나만 보내면 바로 장난이 시작됩니다.
+- 친구가 다시 다른 친구에게 보내도록 유도하는 구조입니다.
+- 단순한 정보성 페이지가 아니라 반응을 유발하는 경험형 웹앱입니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 주의할 점
 
-## Deploy on Vercel
+브라우저 정책상 음악은 사용자의 클릭이나 탭 이후 재생되도록 구현해야 합니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+또한 실제 사용자 경험을 해치지 않도록 안전한 종료 방법은 반드시 제공해야 합니다.  
+공유 유도는 서비스 콘셉트로 연출하되, 사용자가 원하면 언제든 페이지를 닫거나 소리를 끌 수 있도록 설계합니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 기술 스택
+
+| 기술         | 사용 목적                      |
+| ------------ | ------------------------------ |
+| Next.js      | 웹앱 라우팅과 페이지 구성      |
+| React        | 인터랙티브 UI 구현             |
+| TypeScript   | 안정적인 타입 기반 개발        |
+| Tailwind CSS | 빠른 스타일링과 반응형 UI 구현 |
+| ESLint       | 코드 품질 관리                 |
+
+## 프로젝트 구조
+
+```text
+14th_Apr_animal_league
+├── src
+│   └── app
+│       ├── fonts
+│       ├── globals.css
+│       ├── layout.tsx
+│       └── page.tsx
+├── next.config.mjs
+├── package.json
+├── postcss.config.mjs
+├── tailwind.config.ts
+└── tsconfig.json
+```
+
+## 실행 방법
+
+```bash
+git clone https://github.com/LikeLionSCH/14th_Apr_animal_league.git
+cd 14th_Apr_animal_league
+npm install
+npm run dev
+```
+
+실행 후 브라우저에서 아래 주소로 접속합니다.
+
+```text
+http://localhost:3000
+```
+
+---
+
+<div align="center">
+
+시험 테러 링크  
+Animal League
+
+</div>
